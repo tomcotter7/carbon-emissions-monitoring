@@ -1,0 +1,19 @@
+
+    <!--
+
+        this div is used to load in clickable tags - don't think we will need it for the Dashboard.
+
+        <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">
+                    <i class="fas fa-search"></i>
+                </span>
+            </div>
+            <input type="text" id="tag-name-filter" class="form-control"
+                   placeholder="Tag name filter" disabled="@true" />
+        </div>
+    </div>-->
+    <!--<div id="tags-container" class="row">
+        <partial name="_FindTagsPartial" model="new TagListViewModel()" />
+    </div>-->

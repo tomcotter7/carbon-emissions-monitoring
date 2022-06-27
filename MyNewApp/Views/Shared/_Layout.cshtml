@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Team 35 Application</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/font-awesome/css/all.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    @RenderSection("Styles", required: false)
+    <style>
+        .navbar-nav > .active > a {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        Author: Rohan Mistry
+
+        Date: 16/02/2021
+
+        About: Changes I made was to add the other controllers to get the 
+               tabs working at the top of the page when the user presses them.
+               That was pretty much reuse of code for the Index Task.
+               
+               Within here is where I changed the background colour to grey.
+               When this file is read, it renders the body to a "bg-secondary",
+               which is the grey colour ash shown.
+
+               I also added the additional tabs to get some single
+               responsibility within the App to split up the work flow.
+
+               Line refactoring here I think isn't necessary, since it is
+               mainly long chains of commands, hence it will be better left
+               as it is for simplicity.
+    -->
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3 fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" 
+                   asp-area="" 
+                   asp-controller="Home" 
+                   asp-action="Index">Team 35 Application</a>
+                <button class="navbar-toggler" 
+                        type="button" 
+                        data-toggle="collapse" 
+                        data-target=".navbar-collapse" 
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false" 
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" 
+                               asp-area="" 
+                               asp-controller="Home" 
+                               asp-action="Index">Home Page</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link text-dark" 
+                           asp-area="" 
+                           asp-controller="Home" 
+                           asp-action="Dashboard">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link text-dark" 
+                           asp-area="" 
+                           asp-controller="Home" 
+                           asp-action="Insights">Insights</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark"  
+                               asp-area="" 
+                               asp-controller="Home" 
+                               asp-action="AandP">Analysis and Prediction</a>
+                        </li>
+
+                    </ul>
+                        <div class="navbar-text">
+                            <div class="dropdown user-menu">
+                                <a class="dropdown-toggle" href="#" role="button" id="account-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <profile-picture url=
+                                                     "@User.GetProfilePictureUrl()">
+                                    </profile-picture>
+                                    @User.Identity.Name
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" 
+                                     aria-labelledby="account-menu">
+                                    <a class="dropdown-item" 
+                                       href="https://appstore.intelligentplant.com" 
+                                       target="_blank" title="Visit the Industrial App Store (new window)">
+                                        Visit the Industrial App Store
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" asp-controller="Account" asp-action="Logout" title="Sign out of the app">
+                                        Sign Out
+                                    </a>
+                                </div>
+                            </div>
+                        </div>}
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container-fluid bg-secondary">
+        <main role="main" class="p-3 pt-4 mt-5">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/rxjs/rxjs.umd.min.js"></script>
+    <script src="~/lib/Chart.js/Chart.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script>
+        $(document).ready(function () { 
+              $("ul.navbar-nav > li").click(function (e) { 
+               $("ul.navbar-nav > li").removeClass("active"); 
+               $(this).addClass("active"); 
+                }); 
+            });
+    </script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

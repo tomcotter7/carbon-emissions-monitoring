@@ -1,0 +1,40 @@
+﻿@model AandPViewModel
+@{ViewData["Title"] = "Analysis and Predictions";}
+
+
+<h1 style="
+    display: table;
+    margin: auto;
+    background-color: white;
+    text-align: center;
+    font-weight: 700;
+    font-family: sans-serif;
+    text-decoration: underline">
+    Analysis and Predictions
+</h1>
+
+<br />
+
+<div>
+    <div class="form-group" style="font-family: sans-serif">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">
+                    <i class="fas fa-database"></i>
+                </span>
+            </div>
+            <select asp-for="DataSourceName" asp-items="Model.DataSources" 0
+                    class="form-control"></select>
+        </div>
+    </div>
+
+    <br />
+</div>
+
+
+<div id="analysis"> </div>
+
+
+@section Scripts {
+    <script src="~/Scripts/dist/analysis.js"></script>
+}

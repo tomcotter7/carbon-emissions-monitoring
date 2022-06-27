@@ -1,0 +1,83 @@
+@*<div>
+
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="fas fa-database"></i>
+                    </span>
+                </div>
+                <select asp-for="DataSourceName" asp-items="Model.DataSources"
+                        class="form-control"></select>
+            </div>
+        </div>
+
+        <br />
+
+        <form id="machine_learning_helper"
+              onsubmit="return machineLearningHelper(this)">
+            <label for="mlHelperTag">Tag:</label><br />
+            <input type="text" id="mlHelperTag" name="mlHelperTag"
+                   value="ALB-FLC_P2302D.PV" /><br />
+            <label for="mlHelperHours">Hours ago:</label><br />
+            <input type="number" id="mlHelperHours"
+                   mlHelperHours="hours" value=1 /><br /><br />
+            <input type="submit" value="Submit" />
+        </form>
+
+        <br />
+
+        <button id="button_jbf6" onclick="JohnBrown()">John Brown Framo 6</button>
+        <button id="button_sm" onclick="SolarMars()">Solar Mars</button>
+
+        <br /><br />
+
+        <div id="select-buttons"></div>
+
+        <canvas id="chart">HTML5 canvas not available</canvas>
+
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="fas fa-search"></i>
+                    </span>
+                </div>
+                <input type="text" id="tag-name-filter" class="form-control"
+                       placeholder="Tag name filter" disabled="@true" />
+            </div>
+        </div>
+
+        <div id="tags-container" class="row">
+            <partial name="_FindTagsPartial" model="new TagListViewModel()" />
+        </div>
+
+    </div>
+
+    <div id="chart-modal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        <i class="fas fa-chart-line"></i>
+                        Chart: Last 24 Hours
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="chart-container">
+                        <canvas id="chart"></canvas>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>*@

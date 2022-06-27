@@ -1,0 +1,81 @@
+﻿@model InsightsViewModel
+@{ ViewData["Title"] = "Insights"; }
+
+<h1 style="
+    display: table;
+    margin: auto;
+    background-color: white;
+    text-align: center;
+    font-weight: 700;
+    font-family: sans-serif;
+    text-decoration: underline">
+Insights</h1>
+
+<br />
+
+<p style="display: table;
+    margin: auto;
+    background-color: white;
+    text-align: center;
+    font-size: 16px;
+    font-family: sans-serif">
+    Please select the Alba PI Historian data source.
+    This machine specific view can show up to a months worth of data. 
+    In this case select the relevant 
+    machine you wish to analyse. From there, a graph will display the data for
+    that machine over a certain time period defined. Select the relevant 
+    checkboxes to change what is displayed.
+
+    Performance data currently will only work for Water Pumps, the other machines don't have much data on throughput in the historian.
+</p>
+
+<br />
+
+<div>
+    <div class="form-group" style="font-family: sans-serif">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">
+                    <i class="fas fa-database"></i>
+                </span>
+            </div>
+            <select asp-for="DataSourceName" asp-items="Model.DataSources" 0
+                    class="form-control"></select>
+        </div>
+    </div>
+
+    <br />
+
+    <div id="insights"></div>
+
+    <br />
+
+
+    @*<p style="display: table;
+        margin: auto;
+        background-color: white;
+        text-align: center;
+        font-size: 16px;
+        font-family:sans-serif">
+            This can be used to return the data stored for a time period to a CSV file
+            which will be used to train the Machine Learning Algorithms.
+        </p>
+
+        <form id="machine_learning_helper" onsubmit="return getDataCSV(this)"
+              style="text-align: center; font-size: 16px; font-family: sans-serif">
+            <label for="mlHelperTag">Tag:</label><br />
+            <input type="text" id="mlHelperTag" name="mlHelperTag" value="ALB-FLC_P2302D.PV" /><br />
+            <label for="mlHelperHours">Hours ago:</label><br />
+            <input type="number" id="mlHelperHours" mlHelperHours="hours" value=1 /><br /><br />
+            <input type="submit" value="Download CSV" />
+        </form> <br />*@
+
+    <!--<button onclick='getRegressionPrediction("3/12/2021-11:25:16-PM")'>Test Regression</button>-->
+    <!--<button onclick="window.MLCSV()">Get CSV For ML</button>-->
+
+</div>
+
+    @section Scripts {
+
+        <script src="~/Scripts/dist/insights.js"></script>
+    }

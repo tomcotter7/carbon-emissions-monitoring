@@ -1,0 +1,36 @@
+{
+  "name": "mynewapp",
+  "version": "1.0.0",
+  "description": "This ASP.NET Core application uses a [starter template](https://github.com/intelligentplant/IndustrialAppStore.ClientTools.DotNet) from the [Industrial App Store](https://appstore.intelligentplant.com).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config=wwwroot/Scripts/config/webpack.config.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-react-app": "^3.1.2",
+    "jspdf": "^2.3.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.8",
+    "@babel/preset-react": "^7.12.13",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.1.1",
+    "infinite-react-carousel": "^1.2.11",
+    "randomcolor": "^0.6.2",
+    "react": "^17.0.1",
+    "react-component-export-image": "^1.0.6",
+    "react-dom": "^17.0.1",
+    "react-loading-overlay": "^1.0.1",
+    "react-scroll-motion": "^0.2.1",
+    "react-super-responsive-table": "^5.2.0",
+    "recompose": "^0.30.0",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.26.3",
+    "webpack-cli": "^4.5.0"
+  }
+}

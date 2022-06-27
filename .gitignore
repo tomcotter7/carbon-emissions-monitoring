@@ -1,0 +1,11 @@
+**/bin/
+**/obj/
+**/.csv
+MyNewApp/.vs/
+MyNewApp/node_modules/
+MyNewApp/package-lock.json
+.vs/
+Misc Files/
+**/.DS_Store
+MyNewApp/PCATrainingData.csv
+MyNewApp/PCATrainingData_Important.csv
